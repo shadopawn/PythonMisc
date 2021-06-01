@@ -20,7 +20,7 @@ def number_of_target_sum_subarrays(numbers, target_sum = 0):
     return target_sum_count
 
 
-class TestZeroSumSubarrays(unittest.TestCase):
+class TestTargetSumSubarrays(unittest.TestCase):
 
     def test_find_number_of_subarrays_with_zero_sum(self):
         self.assertEqual(number_of_target_sum_subarrays([1, 2, 3]), 0)
