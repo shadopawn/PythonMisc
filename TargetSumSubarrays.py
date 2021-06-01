@@ -4,20 +4,20 @@ from collections import defaultdict
 def number_of_target_sum_subarrays(numbers, target_sum = 0):
     previous_sums = defaultdict(lambda: 0)
 
-    zero_sum_count = 0
+    target_sum_count = 0
 
     current_sum = 0
     for number in numbers:
         current_sum += number
         if current_sum == target_sum:
-            zero_sum_count += 1
+            target_sum_count += 1
         
         if (current_sum - target_sum) in previous_sums:
-            zero_sum_count += previous_sums[current_sum - target_sum]
+            target_sum_count += previous_sums[current_sum - target_sum]
         previous_sums[current_sum] += 1
     
     print(previous_sums)
-    return zero_sum_count
+    return target_sum_count
 
 
 class TestZeroSumSubarrays(unittest.TestCase):
